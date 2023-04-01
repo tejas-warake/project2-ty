@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('bootstrapcss') %>
+        <title>Profile Page</title>
+</head>
+
+<body>
+    <%- include('header') %>
+        <br>
+        <div class="container w-100">
+            <div class="text-center w-50 mx-auto">
+                <h3> <u> <%= user.name %> </u> </h3>
+            </div>
+            <div class="container w-50">
+                <h4>Username: <%= user.username %></h4>
+                <h4>Doubts Asked:</h4>
+            </div>
+
+            <div class="d-flex flex-md-column align-items-center">
+                <% doubts.forEach((doubt)=> { %>
+                    <div class="card w-50">
+                        <div class="card-header">
+                            <!-- <a href="/r/< doubt.category >" target="_blank" rel="noopener noreferrer">< doubt.category ></a> -->
+                            <a href="/doubts/edit/<%= doubt._id %> ">Edit</a> <span>|</span>
+                            <a href="/doubts/delete/<%= doubt._id %> ">Delete</a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= doubt.title %>
+                            </h5>
+                            <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                            <a href="/doubts/<%= doubt._id %>" class="">View..</a>
+                        </div>
+                    </div>
+                    <br>
+                    <% }); %>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
