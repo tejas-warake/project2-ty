@@ -15,6 +15,8 @@ app.use(cookieParser());
 app.use(cors());
     
 
+// Just to see if the checkout happens successfully or not.
+
 // check for authenticated users (custom middleware)
 app.use(checkAuth);
 
