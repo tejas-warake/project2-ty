@@ -5,5 +5,5 @@ const answerSchema = new Schema({
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true }
 }, { timestamps: true });
 
-
+ 
 module.exports = model('Answer', answerSchema);
